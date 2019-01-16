@@ -1,6 +1,6 @@
 main section.products-index,
 main section.categories-show {
-
+ 
   .products {
     display:         flex;
     flex-direction:  row;
@@ -49,6 +49,19 @@ main section.categories-show {
         border-top-right-radius: 4px;
         border-bottom-left-radius: 20px;
         font-size: 0.8em;
+      }
+
+      aside.soldout {
+        position: absolute;
+        top: 0;
+        left: 0;
+        padding: 10px;
+        background-color: #fa8072;
+        border-top-left-radius: 4px;
+        border-bottom-right-radius: 20px;
+        font-size: 0.9em;
+        font-weight: 500;
+        color: white;
       }
 
       &:hover {
