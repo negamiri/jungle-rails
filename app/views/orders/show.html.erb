@@ -7,7 +7,7 @@
   <div class="order-summary jumbotron">
     <h4>Thank you for your order!</h4>
     <h5>Email: <%= @order.email %></h5>
-    <h5>Total: <%= humanized_money_with_symbol @order.total_cents %></h5>
+    <h5>Total: <%= humanized_money_with_symbol @order.total_cents/100 %></h5>
   </div>
 
   <table class="table table-bordered">
