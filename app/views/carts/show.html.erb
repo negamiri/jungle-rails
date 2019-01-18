@@ -4,6 +4,12 @@
     <h1>My Cart</h1>
   </header>
 
+  <% if enhanced_cart.length < 1 %>
+
+  <p class="empty-cart"> Your cart is empty. <%= link_to 'Start shopping now!', root_path %> <%= fa_icon "shopping-cart" %>
+  
+  <% else %>
+
   <div class="panel panel-default items">
     <table class="table table-bordered">
       <thead>
@@ -48,5 +54,7 @@
       <% end %>
     </div>
   </div>
+
+  <% end %>
 
 </section>
