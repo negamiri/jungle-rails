@@ -132,5 +132,47 @@ cat3.products.create!({
   price: 2_483.75
 })
 
+## REVIEWS
+
+prod1 = Product.find_by! name: 'Red Bookshelf'
+prod2 = Product.find_by! name: 'Electric Chair'
+prod3 = Product.find_by! name: 'Modern Skateboards'
+
+prod1.reviews.create!({
+  user_id: 2,
+  description: Faker::Hacker.say_something_smart,
+  rating: 3
+})
+
+prod1.reviews.create!({
+  user_id: 1,
+  description: Faker::Hacker.say_something_smart,
+  rating: 4
+})
+
+prod2.reviews.create!({
+  user_id: 2,
+  description: Faker::Hacker.say_something_smart,
+  rating: 5
+})
+
+prod2.reviews.create!({
+  user_id: 1,
+  description: Faker::Hacker.say_something_smart,
+  rating: 2
+})
+
+prod3.reviews.create!({
+  user_id: 2,
+  description: Faker::Hacker.say_something_smart,
+  rating: 1
+})
+
+prod3.reviews.create!({
+  user_id: 1,
+  description: Faker::Hacker.say_something_smart,
+  rating: 1
+})
+
 
 puts "DONE!"

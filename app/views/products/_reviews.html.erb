@@ -1,0 +1,10 @@
+<dl class="dl-horizontal">
+  <% @product.reviews.each do |item| %>
+
+    <dt>Name: <%= item.user.first_name %></dt>
+    <dd>Rating: <%= item.rating %></dd>
+    <dd>Review: <%= item.description %></dd>
+
+<% end %>
+</dl>
+  
