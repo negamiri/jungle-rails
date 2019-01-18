@@ -44,13 +44,24 @@
             <%= fa_icon "shopping-cart" %> My Cart (<%= cart.size %>)
           <% end %>
         </li>
-        <li>
-        <% if current_user %>
-          Signed in as <%= current_user.first_name %> | <%= link_to 'Logout', logout_path %>
-        <% else %>
-          <%= link_to 'Login', login_path %> | <%= link_to 'Signup', new_user_path %>
-        <% end %>
-      </li>
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+            <% if current_user %>
+            <span class="text-danger"><%= fa_icon 'user', text: "Account: #{current_user.first_name}" %></span>
+            <% else %>
+            <span class="text-danger"><%= fa_icon 'user', text: 'Account' %></span>
+            <% end %>
+            <span class="caret"></span>
+          </a>
+          <ul class="dropdown-menu">
+          <% if current_user %>
+            <li><%= link_to 'Logout', logout_path %></li>
+          <% else %>
+            <li><%= link_to 'Login', login_path %></li>
+            <li><%= link_to 'Signup', new_user_path %></li>
+          <% end %>
+          </ul>
+        </li>
       </ul>
     </div>
   </div>
