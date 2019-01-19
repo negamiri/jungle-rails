@@ -1,6 +1,6 @@
 class ReviewsController < ApplicationController
 
-  before_action :verify_logged_in
+  before_filter :authorize
 
   def new
     @review = Review.new
@@ -12,10 +12,19 @@ class ReviewsController < ApplicationController
     @review.user = current_user
 
     if @review.save!
-      redirect_to product_path(@review.product_id), notice: 'Thanks for your review!'
+      flash[:notice] = 'Thanks for your review!'
     else
-      redirect_to product_path(@review.product_id)
+      flash[:notice] = `Woops something went wrong with your review. Please ensure you're logged in`
     end
+
+    redirect_to product_path(@review.product_id)
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    product = @review.product
+    @review.destroy!
+    redirect_to product_path(product)
   end
 
   private

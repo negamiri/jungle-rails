@@ -16,6 +16,19 @@
         <dl class="dl-horizontal">
           <dt>Name</dt>
           <dd><%= @product.name %></dd>
+          <div class="rating-section">
+          <dt>Rating</dt>
+          <dd><% rating = @product.reviews.average(:rating).to_i %>
+          <% rating.times do %>
+            <span class="rated glyphicon glyphicon-star"></span>
+          <% end %>
+
+          <% blank = 5 - rating %>
+          <% blank.times do %>
+            <span class="not-rated glyphicon glyphicon-star-empty"></span>
+          <% end %>
+          </dd>
+          </div>
           <dt>Description</dt>
           <dd><%= @product.description %></dd>
           <dt>Quantity</dt>

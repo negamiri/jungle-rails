@@ -94,3 +94,37 @@ main section.cart-show {
 
 }
 
+.review-form {
+  margin-top: 3em;
+  margin-bottom: 3em;
+}
+
+.review-form h3{
+  margin-bottom: 1em;
+}
+
+.review-form textarea {
+  width: 30em;
+}
+
+.notice {
+  margin-bottom: 1em;
+  background-color: forestgreen;
+  color: white;
+  padding: 1em;
+}
+
+.rating-section {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+.rated {
+  color: #FFDF00;
+  font-size: 2em;
+}
+
+.not-rated {
+  font-size: 2em;
+}
+
