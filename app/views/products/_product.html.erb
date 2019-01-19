@@ -5,17 +5,31 @@
       <h4><%= product.name %></h4>
     <% end %>
   </header>
+  <p class="index-rating">
+    <% rating = product.reviews.average(:rating).to_i %>
+      <% rating.times do %>
+        <span class="index-rated glyphicon glyphicon-star"></span>
+      <% end %>
+
+      <% blank = 5 - rating %>
+      <% blank.times do %>
+        <span class="index-not-rated glyphicon glyphicon-star-empty"></span>
+      <% end %>
+  </p>
   <p class="description">
     <%= product.description %>
   </p>
   <footer class="actions">
+  <% if product.quantity != 0 %>
     <%= button_to add_item_cart_path(product_id: product.id), class: 'btn btn-primary' , method: :post do %>
       <%= fa_icon "shopping-cart", text: 'Add' %>
     <% end %>
+  <% end %>
     <%= link_to product, class: 'btn btn-default pull-right' do %>
       Details &raquo;
     <% end %>
   </footer>
+  
 
   <aside class="price">
     <%= humanized_money_with_symbol product.price %>
