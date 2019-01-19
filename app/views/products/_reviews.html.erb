@@ -14,7 +14,7 @@
 
       <% if item.user == current_user %>
       <div class="card-text">
-      <%= link_to 'Delete', review_path(item.id), class: 'btn btn-primary', method: :delete, :data => {:confirm => 'Are you sure?'} %></dd>
+      <%= link_to 'Delete', review_path(item.id), class: 'btn btn-primary', method: :delete, :data => {:confirm => 'Are you sure?'} %>
       </div>
         
     </div>
