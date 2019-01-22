@@ -17,9 +17,6 @@ RSpec.feature "HomePages", type: :feature, js: true do
 
   scenario "They see all products" do
     visit root_path
-
-    save_screenshot
-
     expect(page).to have_css 'article.product', count: 10
   end
 
