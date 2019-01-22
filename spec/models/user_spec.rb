@@ -31,6 +31,12 @@ RSpec.describe User, type: :model do
       expect(@user).to_not be_valid
     end
 
+    it "saves email with no whitespace" do
+      @user.email = '   test@test.com  '
+      @user.save
+      expect(@user.email).to eq('test@test.com')
+    end
+
     it "is not valid when passwords do not match" do
       @user.password_confirmation = 'incorrect'
       expect(@user).to_not be_valid
